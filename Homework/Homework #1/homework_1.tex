@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 1}
+
+\author{Chris Hayduk}
+\date{February 10, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+\end{problem}
+
+We have that $M_n = X_n/(n+2)$. Since we start with $1$ red ball in the urn, we have that $X_0 = 1$. Note that $X_n \leq n+1$ for every $n$ because $X_n$ will increase by at most $1$ per ``turn'' but could stay the same, whereas $n$ will always increase by 1 unit per turn. Thus, we have that $0 < M_n = X_n/(n+2) \leq (n+1)/(n+2) < 1$ for all $n \in \mathbb{N}_0$. Hence, $E|M_n| < \infty$ for all $n$.\\
+
+Now, since $M_n = X_n/(n+2)$, we have that $M_n$ is completely determined by $X_n$. Thus, this example satisfies the condition that $M_n$ be determined from the values for $X_n, \ldots, X_0$ and $M_0$.\\
+
+Now consider,
+\begin{align*}
+M_{n+1} - M_n &= X_{n+1}/((n+1)+2) - X_n/(n+2)\\
+&= X_{n+1}/(n+3) - X_n/(n+2)
+\end{align*}
+
+Then, since $X_n$ is given in $A_v = \{X_n = x_n, X_{n-1} = x_{n-1},\ldots, X_0 = x_0, M_0 = m_0\}$, we have
+\begin{align*}
+E\left[\frac{X_{n+1}}{n+3} - \frac{X_n}{n+2} \ | \ A_v\right] &= 1/(n+3)\cdot E[X_{n+1} \ | \ A_v] - 1/(n+2) \cdot E[X_n \ | \ A_v]\\
+&= 1/(n+3)\cdot E[X_{n+1} \ | \ A_v] - X_n/(n+2)\\
+&= 1/(n+3) \cdot \left(M_n \cdot (X_{n} + 1) + (1 - M_n) \cdot X_{n}\right) - X_n/(n+2)\\
+&= 1/(n+3) \cdot \left(M_nX_{n} + M_n + X_{n} - M_nX_{n+1}\right) - X_n/(n+2)\\
+&= 1/(n+3) \cdot \left(M_n + X_{n}\right) - X_n/(n+2)\\
+&= 1/(n+3) \cdot \left(X_n/(n+2) + X_{n}\right) - X_n/(n+2)\\
+&= \frac{X_n}{(n+2)(n+3)} + \frac{X_n}{n+3} - \frac{X_n}{n+2}\\
+&= \frac{X_n}{(n+2)(n+3)} + \frac{X_n(n+2)}{(n+2)(n+3)} - \frac{X_n(n+3)}{(n+2)(n+3)}\\
+&= \frac{X_n}{(n+2)(n+3)} - \frac{X_n}{(n+2)(n+3)}\\
+&= 0
+\end{align*}
+
+as required. Hence, $(M_n)$ is a martingale with respect to $(X_n)$.
+
+\begin{problem}{II}
+\end{problem}
+
+For each $n$, we have that $M_n = S_n^3 - 3nS_n = (X_1 + \cdots + X_n)^3 -  3n(X_1 + \cdots + X_n)$. Hence, $M_n$ is an algebraic expression with a finite sum of $1$s and $-1$s for each $n$, and thus $E|M_n| < \infty$. Furthermore, from the above, we see that $M_n$ can be written as a function of $X_1, \ldots, X_n$, so $M_n$ is fully determined by $M_0, X_0, \ldots, X_n$ as required.\\
+
+Moving on to the increments, we have,
+\begin{align*}
+M_{n+1} - M_n &= ((S_{n+1})^3 - 3(n+1)(S_{n+1})) - (S_n^3 - 3nS_n)\\
+&= 3nS_n - 3(n+1)S_{n+1} - S_n^3 + S_{n+1}^3
+\end{align*}
+
+This gives us,
+\begin{align*}
+E\left[3nS_n - 3(n+1)S_{n+1} - S_n^3 + S_{n+1}^3 \ | \ A_v\right] &= 3E\left[nS_n \ | \ A_v\right] - 3E\left[(n+1)S_{n+1} \ | \ A_v\right] -\\
+&E\left[S_n^3 \ | \ A_v\right] + E\left[S_{n+1}^3 \ | \ A_v\right]\\
+&= 3E\left[nS_n \ | \ A_v\right] - 3E\left[(n+1)(S_{n} + X_{n+1}) \ | \ A_v\right] \\
+&- E\left[S_n^3 \ | \ A_v\right] + E\left[S_n^3 + 3S_n^2X_{n+1} + 3S_nX_{n+1}^2 + X_{n+1}^3 \ | \ A_v\right]\\
+&= 3nS_n - 3(n+1)S_{n} - S_n^3 + S_{n}^3 + 3S_n^2 E\left[X_{n+1} \ | \ A_v \right]\\
+&+ 3S_nE[X_{n+1}^2 \ | \ A_v] + E[X_{n+1}^3 \ | \ A_v]\\
+&= -3S_n + 3S_n\\
+&= 0
+\end{align*}
+
+Hence $(M_n)$ is a martingale with respect to $(X_n)$.
+
+\begin{problem}{III}
+\end{problem}
+
+By Lemma 5.4 in Durrett and taking $A_v = \{X_n = x_n, X_{n-1} = x_{n-1}, \ldots, X_0 = x_0, M_0 = m_0\}$, we have,
+\begin{align*}
+\E\left[\Delta M_n \Delta M_m\right] &= \E\left[\E\left[\Delta M_n \Delta M_m \ | \ A_v\right]\right]\\
+\end{align*}
+
+Then, by Lemma 5.1 and property (iii) from the definition of martingales, we have,
+\begin{align*}
+\E\left[\E\left[\Delta M_n \Delta M_m \ | \ A_v\right]\right] &= \E\left[\Delta M_m\E\left[\Delta M_n  \ | \ A_v\right]\right]\\
+&= \E\left[\Delta M_m \cdot 0 \right]\\
+&= \E\left[0\right]\\
+&= 0
+\end{align*}
+
+
+
+\end{document}
