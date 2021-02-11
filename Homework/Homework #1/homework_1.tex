@@ -123,6 +123,18 @@ Then, by Lemma 5.1 and property (iii) from the definition of martingales, we hav
 &= 0
 \end{align*}
 
+Now for the variance of $M_n$, we have
+\begin{align*}
+\E M_n^2 &= \E \left[\left((M_n - M_{n-1}) + (M_{n-1} - M_{n-2}) + \cdots + (M_1 - M_0) + M_0\right)^2\right]\\
+&= \E [(M_n - M_{n-1})^2 + (M_{n-1} - M_{n-2})^2 + \cdots + (M_1 - M_0)^2 + M_0^2 + 2(M_n - M_{n-1})(M_{n-1} - M_{n-2})\\
+& + \cdots + 2M_0(M_1 - M_0)]
+\end{align*}
+
+By the above arguments, all of the arguments where two intervals are multiplied together will have an expectation of $0$. Hence, we get,
+\begin{align*}
+\E M_n^2 = \sum_{i=0}^{n-1} \left[ \E (M_{i+1} - M_i) \right] + \E M_0^2
+\end{align*}
+
 
 
 \end{document}
