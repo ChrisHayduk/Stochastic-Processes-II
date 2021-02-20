@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 2}
+
+\author{Chris Hayduk}
+\date{February 17, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+Durrett 5.1
+\end{problem}
+
+Let $(X_n)$ be the state of the Markov chain at time $n$. Define $M_n$ to be the sum of the digits of the state for $X_n$. Note that for every $n$, we have that $0 \leq M_n \leq 4$ since the only possible states are: $22, 21, 20, 11, 10, 00$. Hence, for a fixed $n$, we have that,
+\begin{align*}
+|M_n| &\leq 4
+\end{align*}
+
+Hence, $E|M_n| < \infty$ for any fixed $n \geq 0$. In addition, from the definition of $M_n$, we have that $M_n$ can be determined from the values for $X_n, \ldots, X_0$ and $M_0$ since it is simply a function of $X_n$. Lastly, we need to show that $$E(M_{n+1} - M_n \ | \ A_v) = 0$$ for all $n \geq 0$ where $A_v = \{X_n = x_n, \ldots, X_0 = x_0, M_0 = m_0\}$.\\
+
+Note that
+\begin{align*}
+M_{n+1} - M_n &= \text{sum of digits of } X_{n+1} - \text{ sum of digits of }X_n\\
+\end{align*}
+
+Since the sum of the digits of $X_n$ is a constant when conditioning on $A_v$, let us write it as $c$:
+\begin{align*}
+E(M_{n+1} - M_n \ | \ A_v) &= E(M_{n+1} \ | \ A_v) - E(M_n \ | \ A_v)\\
+&= E(M_{n+1} \ | \ A_v) - c
+\end{align*}
+
+Now note that since $A_v$ is given, we have the information on both digits of $X_n$. We know that if $x$ is the number of $A$s in parent 1 in $X_n$ and $y$ is the number of $A$s in parent 2 in $X_n$, then the number of $A$s in $X_n$ is $c = x + y$. We have that probability of choosing an $A$ from parent $1$ is $2 \cdot \left[{x \choose 1}/{2 \choose 1}\right]$ since we are choosing one $A$ from the total number of $A$s in parent 1 (given by $x$). We perform this choice twice, once for each child, which is where the coefficient of $2$ comes from. Finally, the denominator gives us the total number of choices we can make from parent 1. Similarly, the probability of choosing an $A$ from parent $2$ is $2 \cdot \left[{y \choose 1}/{2 \choose 1}\right]$.\\
+
+Hence, the expected number of $A$s in $X_{n+1}$, given by $M_{n+1}$, is,
+\begin{align*}
+E(M_{n+1} \ | \ A_v) &= 2 \cdot \left[{x \choose 1}/{2 \choose 1}\right] + 2 \cdot \left[{y \choose 1}/{2 \choose 1}\right]\\
+&= 2 \frac{{x \choose 1} + {y \choose 1}}{{2 \choose 1}}\\
+&= 2 \frac{{x \choose 1} + {y \choose 1}}{2}\\
+&= {x \choose 1} + {y \choose 1}\\
+&= x + y\\
+&= c
+\end{align*}
+
+So we have,
+\begin{align*}
+E(M_{n+1} - M_n \ | \ A_v) &= E(M_{n+1} \ | \ A_v) - E(M_n \ | \ A_v)\\
+&= E(M_{n+1} \ | \ A_v) - c\\
+&= c - c\\
+&= 0
+\end{align*}
+
+Thus, $M_n$ is a martingale with respect to the sum of the digits of the state of $X_n$.
+
+\begin{problem}{II}
+Durrett 5.4
+\end{problem}
+
+\begin{enumerate}[label=(\alph*)]
+
+\item For a fixed $n$, we have,
+\begin{align*}
+2^nY_n &= 2^nU_n \cdots U_0\\
+&< 2^n 1 \cdots 1\\
+&= 2^n < \infty
+\end{align*} 
+
+Hence, we have that $$E|M_n| < \infty$$
+
+Now note that we have,
+\begin{align*}
+M_{n+1} &= 2^{n+1}Y_{n+1}\\
+&= 2
+\end{align*}
+
+Observe that,
+\begin{align*}
+M_{n+1} - M_n &= 2^{n+1}Y_{n+1} - 2^nY_n\\
+&= 2^n(2U_{n+1}\cdots U_0 - U_{n} \cdots U_0)\\
+&= 2^nU_n \cdots U_0 (2U_{n+1} - 1)\\
+&= 2^nY_n (2U_{n+1} - 1)\\
+&= M_n (2U_{n+1} - 1)
+\end{align*}
+
+So we have by the fact that $E(U_n) = 0.5$ for every $n$,
+\begin{align*}
+E(M_{n+1} - M_n \ | \ A_v) &= M_n E(2U_{n+1} - 1 \ | \ A_v)\\
+&= M_n \left[2E(U_{n+1} \ | \ A_v) - 1\right]\\
+&= M_n \left[2(0.5) - 1 \right]\\
+&= M_n \cdot 0\\
+&= 0
+\end{align*}
+
+\item We have,
+\begin{align*}
+(1/n) \log Y_n &= 1/n (\log U_1 + \cdots + \log U_n)
+\end{align*}
+
+Since $U_n \sim \text{Uniform}(0,1)$, we have that $-\log U_n \sum \text{Exponential}(\lambda = 1)$ for every $n$. Hence, $E(\log U_n) = -1$ for every $n$. Thus, by the Strong Law of Large Numbers, we have that,
+\begin{align*}
+(1/n) \log Y_n = 1/n (\log U_1 + \cdots + \log U_n) \to -1
+\end{align*}
+
+as $n \to \infty$.
+
+\item Recall that $M_n = 2^n Y_n$. We have that $Y_n = e^{\log Y_n}$
+
+\end{enumerate}
+
+\begin{problem}{III}
+Durrett 5.6
+\end{problem}
+
+Let $S_n = X_1 + \cdots + X_n$ where the $X_i$ are independent and $EX_i = 0$ and $\text{var}(X_i) = \sigma^2$. By Example 5.3, $S_n^2 -n\sigma^2$ is a martingale. Let $T = \{n: \ |S_n| > a\}$. Then by Theorem 5.10, we have that $$EM_{T \wedge n} = EM_0$$
+
+
+
+
+\end{document}
