@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 3}
+
+\author{Chris Hayduk}
+\date{March 3, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+\end{problem}
+
+
+\begin{problem}{II}
+Durrett 5.9
+\end{problem}
+
+Let $X_1, X_2, \ldots$ be independent with $P(X_i = 1) = p$ and $P(X_i = -1) = q = 1-p$ where $p < 1/2$. Let $S_n = S_0 + \xi_1 + \cdots + \xi_n$ and let $V_0 = \min\{n \geq 0 : S_n = 0\}$. (5.13) implies $\E_xV_0 = x/(1-2p)$. If we let $Y_i = X - i - (p-q)$ and note that $EY_i = 0$ and $$\text{var}(Y_i) = \text{var}(X_i) = EX_iu^2 - (EX_i)^2$$ then it follows that $(S_n - (p-q)n)^2 - n(1-(p-q)^2)$ is a martingale. Moreover, when $S_0 = x$, the variance of $X_0$ is $$x \cdot \frac{1 - (p-q)^2}{(q-p)^3}$$
+\begin{enumerate}[label=(\alph*)]
+
+\item
+
+\item
+
+\item
+
+\end{enumerate}
+
+
+\begin{problem}{III}
+LPW 4.2
+\end{problem}
+
+By Proposition 4.2, we have that,
+\begin{align*}
+||\mu P - vP||_{TV} &= \frac{1}{2} \sum_{x \in \mathcal{X}} |\mu P(x) - vP(x)|\\
+&= \frac{1}{2} \sum_{x \in \mathcal{X}} \left| \sum_{y \in \mathcal{X}} \mu(y) P(y, x) - v(y)P(y, x) \right|\\
+&= \frac{1}{2} \sum_{x \in \mathcal{X}} \left| \sum_{y \in \mathcal{X}} P(y,x)[\mu(y) - v(y)] \right|\\
+&\leq \frac{1}{2} \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{X}} P(y,x)|\mu(y) - v(y)|\\
+&= \frac{1}{2} \sum_{y \in \mathcal{X}} |\mu(y) - v(y)| \sum_{x \in \mathcal{X}} P(y,x)\\
+&= \frac{1}{2} \sum_{y \in \mathcal{X}} |\mu(y) - v(y)| \cdot 1\\
+&= \frac{1}{2} \sum_{y \in \mathcal{X}} |\mu(y) - v(y)|\\
+&= ||\mu - v||_{TV}
+\end{align*}
+
+Hence, we have that $||\mu P - vP||_{TV} \leq ||\mu - v||_{TV}$ as required. In particular, we have that $||\mu P^{t+1} - \pi||_{TV} \leq ||\mu P^t - \pi||_{TV}$.\\
+
+Now fix $t > 0$. By the above, we must have that,
+\begin{align*}
+&\max_{x \in \mathcal{X}} ||P^{t+1}(x, \cdot) - \pi||_{TV} \leq \max_{x \in \mathcal{X}} ||P^{t}(x, \cdot) - \pi||_{TV}\\
+\iff &d(t+1) \leq d(t)
+\end{align*}
+
+and,
+\begin{align*}
+&\max_{x \in \mathcal{X}} ||P^{t+1}(x, \cdot) - P^{t+1}(y, \cdot)||_{TV} \leq \max_{x \in \mathcal{X}} ||P^{t}(x, \cdot) - P^{t}(y, \cdot)||_{TV}\\
+\iff &\overline{d}(t+1) \leq \overline{d}(t)
+\end{align*}
+
+
+\begin{problem}{III}
+LPW 4.4
+\end{problem}
+
+
+\end{document}
