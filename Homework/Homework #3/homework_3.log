@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  1 MAR 2021 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.4)  3 MAR 2021 18:49
 entering extended mode
 **./homework_3.tex
 (homework_3.tex
@@ -390,47 +390,47 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 54
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 64.
+(Font)              <12> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 64.
+(Font)              <8> on input line 59.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 64.
+(Font)              <6> on input line 59.
 
 [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
-[2] (homework_3.aux) ) 
+[3] [4] (homework_3.aux) ) 
 Here is how much of TeX's memory you used:
- 4269 strings out of 479618
- 62802 string characters out of 2865027
- 349730 words of memory out of 3000000
- 21362 multiletter control sequences out of 15000+200000
- 447782 words of font info for 72 fonts, out of 3000000 for 9000
+ 4275 strings out of 479618
+ 62870 string characters out of 2865027
+ 364730 words of memory out of 3000000
+ 21365 multiletter control sequences out of 15000+200000
+ 456610 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,10n,74p,544b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
+ 68i,14n,74p,628b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/lm/lm-rm.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-mathsy.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-mathex.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
 vips/lm/lm-mathit.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/d
-vips/lm/lm-rm.enc}{C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
-/lm/lm-ec.enc}<C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmbx12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmex10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmmi12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmmi8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmr12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmr17.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-sy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-sy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb>
-Output written on homework_3.pdf (2 pages, 134464 bytes).
+vips/lm/lm-ec.enc}<C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmbx12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmex10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmmi12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmmi8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmr12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmr17.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/symbols/msbm10.pfb>
+Output written on homework_3.pdf (4 pages, 145657 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

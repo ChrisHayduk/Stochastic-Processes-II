@@ -56,12 +56,75 @@
 \begin{problem}{I}
 \end{problem}
 
+Let us define a new Markov $Y_n$ with all possible $3$ toss sequences as its states:$$\{HHH, HHT, HTT, TTT, HTH, THH, THT, TTH\}$$
+
+Then our transition probability matrix is given by,
+\begin{align*}
+p = \kbordermatrix{
+    & HHH & HHT & HTT & TTT & HTH & THH & THT & TTH\\
+    HHH & 1/2 & 1/2 & 0 & 0 & 0 & 0 & 0 & 0\\
+    HHT & 0 & 0 & 1/2 & 0 & 1/2 & 0 & 0 & 0\\
+    HTT & 0 & 0 & 0 & 1/2 & 0 & 0 & 0 & 1/2\\
+    TTT & 0 & 0 & 0 & 1/2 & 0 & 0 & 0 & 1/2\\
+    HTH & 0 & 0 & 0 & 0 & 0 & 1/2 & 1/2 & 0\\
+    THH & 1/2 & 1/2 & 0 & 0 & 0 & 0 & 0 & 0\\
+    THT & 0 & 0 & 1/2 & 0 & 1/2 & 0 & 0 & 0\\
+    TTH & 0 & 0 & 0 & 0 & 0 & 1/2 & 1/2 & 0
+  }
+\end{align*}
+
+We'll now eliminate the row and column for $HTH$, yielding,
+\begin{align*}
+r = \kbordermatrix{
+    & HHH & HHT & HTT & TTT & THH & THT & TTH\\
+    HHH & 1/2 & 1/2 & 0 & 0 & 0 & 0 & 0\\
+    HHT & 0 & 0 & 1/2 & 0 & 0 & 0 & 0\\
+    HTT & 0 & 0 & 0 & 1/2 & 0 & 0 & 1/2\\
+    TTT & 0 & 0 & 0 & 1/2 & 0 & 0 & 1/2\\
+    THH & 1/2 & 1/2 & 0 & 0 & 0 & 0 & 0\\
+    THT & 0 & 0 & 1/2 & 0 & 0 & 0 & 0\\
+    TTH & 0 & 0 & 0 & 0 & 1/2 & 1/2 & 0
+  }
+\end{align*}
+
+Thus we have,
+\begin{align*}
+I - r &= \kbordermatrix{
+    & HHH & HHT & HTT & TTT & THH & THT & TTH\\
+    HHH & 1/2 & -1/2 & 0 & 0 & 0 & 0 & 0\\
+    HHT & 0 & 1 & -1/2 & 0 & 0 & 0 & 0\\
+    HTT & 0 & 0 & 1 & -1/2 & 0 & 0 & -1/2\\
+    TTT & 0 & 0 & 0 & 1/2 & 0 & 0 & -1/2\\
+    THH & -1/2 & -1/2 & 0 & 0 & 1 & 0 & 0\\
+    THT & 0 & 0 & -1/2 & 0 & 0 & 1 & 0\\
+    TTH & 0 & 0 & 0 & 0 & -1/2 & -1/2 & 1
+  }
+\end{align*}
+
+And finally,
+\begin{align*}
+(I - r)^{-1}\mathbf{1} &= \begin{pmatrix}
+8\\
+6\\
+10\\
+10\\
+8\\
+6\\
+8
+\end{pmatrix}
+\end{align*}
+
+Observe that after the first three tosses, each possibility occurs with probability 1/8. Hence, we have,
+\begin{align*}
+E(\tau) &= 3 + \frac{1}{8}(0 + 8 + 6 + 10 + 10 + 8 + 6 + 8)\\
+&= 10
+\end{align*}
 
 \begin{problem}{II}
 Durrett 5.9
 \end{problem}
 
-Let $X_1, X_2, \ldots$ be independent with $P(X_i = 1) = p$ and $P(X_i = -1) = q = 1-p$ where $p < 1/2$. Let $S_n = S_0 + \xi_1 + \cdots + \xi_n$ and let $V_0 = \min\{n \geq 0 : S_n = 0\}$. (5.13) implies $\E_xV_0 = x/(1-2p)$. If we let $Y_i = X - i - (p-q)$ and note that $EY_i = 0$ and $$\text{var}(Y_i) = \text{var}(X_i) = EX_iu^2 - (EX_i)^2$$ then it follows that $(S_n - (p-q)n)^2 - n(1-(p-q)^2)$ is a martingale. Moreover, when $S_0 = x$, the variance of $X_0$ is $$x \cdot \frac{1 - (p-q)^2}{(q-p)^3}$$
+\textbf{Context from Durrett 5.8:} Let $X_1, X_2, \ldots$ be independent with $P(X_i = 1) = p$ and $P(X_i = -1) = q = 1-p$ where $p < 1/2$. Let $S_n = S_0 + X_1 + \cdots + X_n$ and let $V_0 = \min\{n \geq 0 : S_n = 0\}$. (5.13) implies $\E_xV_0 = x/(1-2p)$. If we let $Y_i = X - i - (p-q)$ and note that $EY_i = 0$ and $$\text{var}(Y_i) = \text{var}(X_i) = EX_iu^2 - (EX_i)^2$$ then it follows that $(S_n - (p-q)n)^2 - n(1-(p-q)^2)$ is a martingale. Moreover, when $S_0 = x$, the variance of $X_0$ is $$x \cdot \frac{1 - (p-q)^2}{(q-p)^3}$$
 \begin{enumerate}[label=(\alph*)]
 
 \item
@@ -107,6 +170,20 @@ and,
 \begin{problem}{III}
 LPW 4.4
 \end{problem}
+
+Let $(X_i, Y_i)$ be the optimal coupling for each $\mu_i, v_i$. Define $X = (X_1, \ldots, X_n)$ and $Y = (Y_1, \ldots, Y_n)$ where $X$ is distributed as $\mu$ and $Y$ is distributed as $v$. Let $(X, Y)$ be a coupling of these two random variables. By Proposition 4.7, we have $$||\mu - v||_{TV} = \inf \{P\{X \neq Y\} : (X, Y) \text{ is a coupling of } \mu \text{ and } v\}$$ Since $(X, Y)$ is a specific coupling of $\mu$ and $v$, it must be greater than the infimum over all couplings and we have that $$||\mu - v||_{TV} \leq P\{X \neq Y\}$$ for this specific coupling $(X, Y)$. This gives us,
+\begin{align*}
+||\mu - v||_{TV} &\leq P\{X \neq Y\}\\
+&\leq \sum_{i=1}^n P(X_i \neq Y_i)
+\end{align*}
+
+Since $(X_i, Y_i)$ is the optimal coupling for each $\mu_i, v_i$, by Proposition 4.7, we have that
+\begin{align*}
+||\mu - v||_{TV} &\leq \sum_{i=1}^n P(X_i \neq Y_i)\\
+&= \sum_{i=1}^n ||\mu_i - v_i||_{TV}
+\end{align*}
+
+as required.
 
 
 \end{document}
