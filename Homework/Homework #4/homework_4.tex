@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 4}
+
+\author{Chris Hayduk}
+\date{March 10, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+LPW 5.2
+\end{problem}
+
+Since $P\{\tau_{\text{couple}} \leq t_0\} \geq \alpha$, we have $$P\{\tau_{\text{couple}} > t_0\} \leq 1 - \alpha$$ Note that since this coupling is Markovian, the probability of not coupling on any length $t_0$ is the same. Hence $$P\{\tau_{\text{couple}} > kt_0\} \leq (1 - \alpha)^k$$
+
+\begin{problem}{II}
+\end{problem}
+
+Observe that for $(X_n)$, we have,
+\begin{align*}
+S_X &= \{g \in G \ : \ \mu(g) > 0 \}\\
+&= \{3\}
+\end{align*}
+
+This set generates the following group:
+\begin{align*}
+\langle 3, 1 \rangle 
+\end{align*}
+
+Hence, by Prop 2.13, we have that $(X_n)$ is not irreducible. On the other hand, we have
+\begin{align*}
+S_Y &= \{g \in G \ : \ \mu(g) > 0 \}\\
+&= \{3, 5\}
+\end{align*}
+
+and so the set $S_Y$ generates the following group:
+\begin{align*}
+\langle 1, 3, 5, 7 \rangle 
+\end{align*}
+
+Thus, $(Y_t)$ is in fact irreducible. Note that in $G$, every element is its own inverse. That is $g = g^{-1}$ for all $g \in G$. Hence we have, 
+\begin{align*}
+\mu(g) = \mu(g^{-1})
+\end{align*}
+
+and
+\begin{align*}
+\nu(g) = \nu(g^{-1})
+\end{align*}
+
+Thus, both $\mu$ and $\nu$ are symmetric.
+
+\begin{problem}{III}
+\end{problem}
+
+We have $X \sim \text{Poisson}(a)$, $Z \sim \text{Poisson}(b-a)$, and $Y = X + Z$. Hence, $Y \sim \text{Poisson}(b)$. We have that $(X, Y)$ is a coupling of $\mu$ and $\nu$. Observe that $X = Y$ iff $Z = 0$. Thus, $P\{X \neq Y\} = P\{Z \neq 0\}$. We have,
+\begin{align*}
+|| \mu - \nu ||_{TV} &\leq \inf \{P\{X \neq Y\} : \ (X, Y) \text{ is a coupling of } \mu \text{ and } \nu\}\\
+&\leq P\{X \neq Y\}\\
+&= P\{Z \neq 0\}\\
+&= \frac{(b-a)^0 e^{-0}}{0!}\\
+&= 1
+\end{align*}
+
+\end{document}
