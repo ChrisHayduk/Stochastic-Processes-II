@@ -9,8 +9,11 @@
 \usepackage{mathrsfs}
 \usepackage{kbordermatrix}
 
+
 \usepackage{graphicx}
 \usepackage{bbm}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \renewcommand{\kbldelim}{(}% Left delimiter
 \renewcommand{\kbrdelim}{)}% Right delimiter
@@ -57,13 +60,91 @@
 LPW 5.4
 \end{problem}
 
+\begin{enumerate}[label=\alph*)]
+
+\item We have from the proof of Theorem 5.6 that for any coordinate $i$, the expected coupling time is,
+\begin{align*}
+E_{x, y}(\tau_i) \leq \frac{dn^2}{4}
+\end{align*}
+
+Thus, we have that, if $t = dn^2$, then,
+\begin{align*}
+P_{x, y}\{\tau_i > t\} &\leq \frac{E_{x, y}(\tau_i)}{t}\\
+&\leq \frac{1}{t} \frac{dn^2}{4}\\
+&= \frac{1}{4}
+\end{align*}
+
+Now suppose $t = 2dn^2$. By Remark 5.3, we know that this coupling is Markovian and hence, the probability that that $x$ and $y$ have not coupled between $t_0 = dn^2$ and $t = 2dn^2$ is still $1/4$. Thus, by induction, we have that if $t \geq kdn^2$,
+\begin{align*}
+P_{x, y}\{\tau_i > t\} &\leq P_{x, y}\{\tau_i > kdn^2\}\\
+&\leq (1/4)^k
+\end{align*}
+
+\item We have that,
+\begin{align*}
+P\left\{\max_{1 \leq i \leq d} \tau_i > kdn^2\right\} \leq P\left(\sqcup_{i=1}^d \tau_i > kdn^2\right)
+\end{align*}
+
+Since the coordinates are independent of one another, our union in the second part of the above equation is disjoint. Hence, we have,
+\begin{align*}
+P\left(\sqcup_{i=1}^d \tau_i > kdn^2\right) &= \sum_{i=1}^d P\left(\tau_i > kdn^2\right)\\
+&= \frac{d}{4^k}
+\end{align*}
+
+Now, if we take $k = \ceil[\bigg]{\log_4(d/\epsilon)}$, then we have,
+\begin{align*}
+P\left\{\max_{1 \leq i \leq d} \tau_i > kdn^2\right\} &\leq \frac{d}{4^k}\\
+&= \frac{d}{4^{\ceil{\log_4(d/\epsilon)}}}\\
+&= \frac{d}{\ceil{d/\epsilon}}\\
+&\leq \frac{d}{d/\epsilon}\\
+&= \epsilon
+\end{align*}
+
+And hence by Corollary 5.5, we have that,
+\begin{align*}
+d(t) &\leq \max_{x, y \in \mathcal{X}} P_{x, y}\{\tau_{\text{couple}} > t\}\\
+&\leq \epsilon
+\end{align*}
+
+when $t > kdn^2$ and $k = \ceil[\bigg]{\log_4(d/\epsilon)}$. Hence,
+\begin{align*}
+t_{\text{mix}} &= kdn^2\\
+&= \ceil[\bigg]{\log_4(d/\epsilon)}dn^2
+\end{align*}
+
+as required.
+\end{enumerate}
+
 \begin{problem}{II}
 LPW 5.5
 \end{problem}
+
+Let us assume that we now have a finite $b-$ary tree with depth $k$. By the same coupling process as described in section 5.3.4, we have that,
+\begin{align*}
+\tau &= \min \{t \geq 0: X_t = Y_t \}\\
+\tau_{\rho} &= \min\{t \geq 0: Y_t = \rho\}
+\end{align*}
+
+And $E(\tau) \leq E_{y_0}(\tau_{\rho})$. Moreover, the distance of $Y_t$ from the leaves is still a birth-and-death chain, this time with $p = \frac{1}{2} \cdot \frac{1}{b} = \frac{1}{2b}$ and $q = \frac{1}{2} - p = \frac{b-1}{2b}$. Then by (2.14), we have,
+\begin{align*}
+E_{y_0}(\tau_{\rho}) &\leq \frac{2b}{2-b} \left[k + \frac{b-1}{2b}\left(\frac{1 - (b-1)^k}{\frac{2-b}{2b}}\right)\right]\\
+&=  \frac{2b}{2-b} \left[k + \frac{b-1}{2-b}\left(1 - (b-1)^k\right)\right]\\
+&\leq -2b \left[k + b\left(1 - b^k\right)\right]\\
+&= -2bk - 2b^2 + 2b^{k+2}\\
+&= 2b(b^{k+1} - k - b)\\
+&\leq 2bn
+\end{align*}
+
+And so,
+\begin{align*}
+t_{\text{mix}} &\leq 4(2bn)\\
+&= 8bn
+\end{align*}
 
 \begin{problem}{III}
 LPW 6.10
 \end{problem}
 
+Let $\tau_k$  be the first time that vertex $k$ has been reached.
 
 \end{document}

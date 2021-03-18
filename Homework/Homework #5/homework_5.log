@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  16 MAR 2021 16:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  17 MAR 2021 23:56
 entering extended mode
 **./homework_5.tex
 (homework_5.tex
@@ -256,7 +256,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 47
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 50
 .
  (C:\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -265,24 +265,24 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box51
-)
-No file homework_5.aux.
+) (homework_5.aux)
 \openout1 = `homework_5.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -336,67 +336,80 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
-4.
+7.
 
 (C:\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-4.
+7.
  (C:\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-54.
+57.
 
 (C:\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-54.
+57.
  (C:\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 54.
+(Font)              <14.4> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 54.
+(Font)              <10> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 54.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+(Font)              <7> on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 
 
 (C:\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 
  (C:\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 54
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57
 .
 
 (C:\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 65.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 65.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 65.
+ [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (homework_5.aux
-) ) 
+{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3] (homewo
+rk_5.aux) ) 
 Here is how much of TeX's memory you used:
- 4221 strings out of 479334
- 58522 string characters out of 2873605
- 353168 words of memory out of 3000000
- 21607 multiletter control sequences out of 15000+200000
- 429272 words of font info for 52 fonts, out of 3000000 for 9000
+ 4266 strings out of 479334
+ 59223 string characters out of 2873605
+ 367509 words of memory out of 3000000
+ 21641 multiletter control sequences out of 15000+200000
+ 447782 words of font info for 72 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,6n,74p,232b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/MiKTeX/fonts/type1/public/lm/lmb
-x12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/publi
-c/lm/lmr17.pfb>
-Output written on homework_5.pdf (1 page, 73170 bytes).
+ 68i,13n,74p,277b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/MiKTeX/fonts/enc/dvips/l
+m/lm-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTeX/fonts/enc/dv
+ips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<C:/MiKTeX/fon
+ts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/M
+iKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.p
+fb><C:/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/
+lmr17.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/MiKTeX/fonts/type1/publ
+ic/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/typ
+e1/public/lm/lmsy8.pfb>
+Output written on homework_5.pdf (3 pages, 156816 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
