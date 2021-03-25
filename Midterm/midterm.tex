@@ -59,20 +59,77 @@
 \begin{problem}{I}
 \end{problem}
 
+We have that,
+\begin{align*}
+E|N_n| &= E|\log(M_n) - \rho n|
+\end{align*}
+
+Note that $\rho n$ is a constant for any fixed $n$, and that $M_n$ is a finite sum of finite numbers for any fixed $n$. Thus,
+\begin{align*}
+E|N_n| < \infty
+\end{align*}
+
+for all $n \geq 0$. Moreover, since $H_n$ is predictable, $S_n = X_1 + \cdots X_n$, and $M_n$ is a product of these two, we have that $M_n$ can we determined from the values $X_n, \ldots X_0$ and $M_0$ as required. Lastly, we have,
+\begin{align*}
+M_{n+1} - M_n &= H_{k+1}X_{k+1}
+\end{align*}
+
+We have that $H_{k+1}X_{k+1} \leq 0$ when $X_{k+1} = -1$ and $H_{k+1}X_{k+1} \geq 0$ when $X_{k+1} = 1$.\\
+
+Thus, we have,
+\begin{align*}
+N_{n+1} - N_{n} &= \log(M_{n+1}) - \rho (n+1) - (\log(M_{n}) - \rho n)\\
+&= \log(M_{n+1}) - \rho n - \rho - \log(M_{n}) + \rho n\\
+&= \log(M_{n+1}) - \rho - \log(M_{n})\\
+&= \log(M_{n+1}) - (\log(M_{n}) + \rho)
+\end{align*}
+
+When $X_{k+1} = -1$, we have that $\log(M_n) + \rho > \log(M_{n+1})$ and so we get,
+
+
+
 \begin{problem}{II}
 \end{problem}
 
-Consider a random walk on the square $\{0, 1\}^2$ as a starting point. Then, with initial state $\vec{0} = (0, 0)$, we have the following drawing:
+In order to inform our approach, let us first consider a random walk on the square $\{0, 1\}^2$ as a starting point. Then, with initial state $\vec{0} = (0, 0)$, we have the following drawing:
 
 \includegraphics[scale=0.15]{unit_square}
 
-Clearly we have that $(1, 1)$ is the farthest point from our start state, $(0, 0)$. Hence, we would expect to visit $(1, 1)$ the least and this find that $p^t(\vec{0}, \vec{1})$ is minimal for large $t$ in the case of the square. Now consider the cube in $\{0, 1\}^3$:
+We can set up the transition probability matrix fairly easily as follows,
+\begin{align*}
+p = \kbordermatrix{
+    & (0,0) & (0,1) & (1,0) & (1,1) \\
+    (0,0) & 0.5 & 0.25 & 0.25 & 0\\
+    (0,1) & 0.25 & 0.5 & 0 & 0.25\\
+    (1,0) & 0.25 & 0 & 0.5 & 0.25\\
+    (1,1) & 0 & 0.25 & 0.25 & 0.5
+  }
+\end{align*}
 
-\includegraphics[scale=1]{unit_cube}
+Using numerical software to raise $p$ to the 10,000th power, we get,
+\begin{align*}
+p^{10000} &= \kbordermatrix{
+    & (0,0) & (0,1) & (1,0) & (1,1) \\
+    (0,0) & 0.25 & 0.25 & 0.25 & 0.25\\
+    (0,1) & 0.25 & 0.25 & 0.25 & 0.25\\
+    (1,0) & 0.25 & 0.25 & 0.25 & 0.25\\
+    (1,1) & 0.25 & 0.25 & 0.25 & 0.25
+  }
+\end{align*}
 
-Again, we see that it takes the most transitions to reach $(1, 1, 1)$ from the starting point $(0, 0, 0)$. Hence, we would expect to visit $(1, 1, 1)$ the least and this find that $p^t(\vec{0}, \vec{1})$ is minimal for large $t$ in the case of the cube as well.\\
+Since all the entries of $p^{10000}$ are identical, we should have that $p$ raised to any other power will be the same matrix. Thus, in the case of lazy random walk on the square, we have $p^t(\vec{0}, \vec{x}) = 0.25$ for large $t$ and for all $\vec{x}$ in the state space. We will now attempt to generalize this to the hypercube.\\
 
-Generalizing this to arbitrary $n$, we would expect that for a lazy random walk on the hypercube $\{0, 1\}$, starting from initial state $\vec{0}$, that $p^t(\vec{0}, \vec{1})$ is minimal for all large $t$. We will prove this now.
+From Section 2.3 in the text, we have that the stationary distribution on the hypercube is uniform on $\{0, 1\}^n$.  Now let us consider the transition matrix $p$ on the hypercube. Note that, since this is a lazy random walk, $p(x, x) > 0$ for all $x$ in the state space. Thus, every state has period $1$. That is, $p$ is aperiodic. Moreover, it is possible to reach any state $y$ from any state $x$ because the transition probability to any of $x$'s neighbors is positive and there must exist a path on the hypercube to any other vertex, otherwise the vertex would not be on the hypercube. Thus, $p$ is irreducible. Finally, we already have that $p$ has a stationary distribution, so that holds as well and we can apply Durrett Theroem 1.19 (Convergence Theorem), which states,
+\begin{align*}
+p^t(x,y) \to \pi(y)
+\end{align*}
+
+as $t \to \infty$. Hence, we have that $p^t(\vec{0}, x) \to \pi(x)$ for every state $x$ in the state space. But since the stationary distribution is uniform, this converges to the same value for every state $x$. Thus, for any choice of $x$ in the state space, we have that,
+\begin{align*}
+p^t(\vec{0}, x)
+\end{align*}
+
+is minimal for large $t$.
 
 \begin{problem}{III}
 \end{problem}
