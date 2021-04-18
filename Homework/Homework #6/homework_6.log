@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  25 MAR 2021 23:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  14 APR 2021 23:53
 entering extended mode
-**./midterm.tex
-(midterm.tex
+**./homework_6.tex
+(homework_6.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> xparse <2020-03-03>
 (C:\MiKTeX\tex/latex/base\article.cls
@@ -265,8 +265,8 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box51
-) (midterm.aux)
-\openout1 = `midterm.aux'.
+) (homework_6.aux)
+\openout1 = `homework_6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
@@ -387,43 +387,35 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 63.
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-<unit_square.png, id=1, 1204.5pt x 1159.33125pt>
-File: unit_square.png Graphic file (type png)
-<use unit_square.png>
-Package pdftex.def Info: unit_square.png  used on input line 109.
-(pdftex.def)             Requested size: 180.6672pt x 173.89218pt.
 [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-
- []
-
-[2 <./unit_square.png>] [3] [4] (midterm.aux) ) 
+{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
+(homework_6.aux) ) 
 Here is how much of TeX's memory you used:
- 4274 strings out of 479334
- 59264 string characters out of 2873605
- 363503 words of memory out of 3000000
- 21648 multiletter control sequences out of 15000+200000
- 447782 words of font info for 72 fonts, out of 3000000 for 9000
+ 4262 strings out of 479334
+ 59185 string characters out of 2873605
+ 365509 words of memory out of 3000000
+ 21639 multiletter control sequences out of 15000+200000
+ 441802 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,13n,74p,795b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX/fonts/enc/dvips/lm/lm
--ec.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/enc/dvips/
-lm/lm-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/fonts/enc/d
-vips/lm/lm-mathsy.enc}<C:/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fo
-nts/type1/public/lm/lmex10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/
-MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr12.p
-fb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/MiKTeX/fonts/type1/public/lm/
-lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb>
-Output written on midterm.pdf (4 pages, 157939 bytes).
+ 68i,9n,74p,232b,247s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/MiKTeX/fonts/enc/
+dvips/lm/lm-mathsy.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/f
+onts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/MiK
+TeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmex10.pf
+b><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public/lm/
+lmmi6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/MiKTeX/fonts/type1/pub
+lic/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/MiKTeX/fonts/ty
+pe1/public/lm/lmr6.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fon
+ts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Mi
+KTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on homework_6.pdf (3 pages, 157744 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

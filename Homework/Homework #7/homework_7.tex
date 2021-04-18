@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 7}
+
+\author{Chris Hayduk}
+\date{April 21, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+LPW 8.1
+\end{problem}
+
+
+Fix $\eta \in S_n$. We want to show that $\sigma_{n-1}(j)$ is uniformly distributed on $\mathcal{S}_n$. Note that $\mathcal{S}_n$ has size $n!$, so we are looking to show that the probability that $\sigma_{n} = \eta$ with $\eta \in \mathcal{S}_n$ is $1/n!$ for any $\eta \in \mathcal{S}_n$.\\
+
+Let us start with the base case, $\sigma_1$. We have that the size of $\mathcal{S}_n$ is $1/n!$. Observe that, to construct $\sigma_1$, we select an integer uniformly from $\{1, 2, \ldots, n\}$. That is, we have $1/n$ probability of picking any integer. If $1$ is selected to be $J_1$, then we have that $\sigma_1 = \sigma_0 \circ (11) = \text{id}$. For any other number selected, we have that $\sigma_1 = \sigma_0 \circ (1 J_1) = (1 J_1)$. Note that there are $n$ such permutations (if we include the identity) in $\mathcal{S}_n$. Hence, the probability that $\sigma_1 = \eta$ is $1/n = \prod_{i=0}^{k-1} 1/(n-i)$.\\
+
+Now suppose we know the probability that $\sigma_{k-1}$ is uniform on $\mathcal{S}_{n}$ with probability $\prod_{i=0}^{k-2} 1/(n-i)$. Consider $\sigma_k$. Let us select $J_k$ from $\{k, \ldots, n\}$. We have $n-k+1$ choices, each with probability $(1/(n-k+1)$. Note that if $J_k = k$, then $\sigma_k = \sigma_{k-1} \circ (kk) = \sigma_{k-1}$. So let us consider $J_k \in \{k+1, \ldots, n\}$. For any choice $J_k$ in this set, we have that $\sigma_k = \sigma_{k-1} \circ (k J_k)$. Any two cycle of the form $(k J_k)$ cannot already be in $\sigma_{k-1}$ because, by definition, $k$ had not yet been reached, so $\sigma_k$ is distinct from $\sigma_{k-1}$. Hence, there are $n-k-1$ possibilities for $\sigma_k$ given $\sigma_{k-1}$. So we have the probability that $\sigma_k = \eta$ is,
+\begin{align*}
+\prod_{i=0}^{k-2} 1/(n-i) \cdot 1/(n-k+1) &= \prod_{i=0}^{k-1} 1/(n-i)
+\end{align*}
+
+Hence, by the induction above, we have that the probability that $\sigma_n = \eta$ for $\eta \in \mathcal{S}_n$ is
+\begin{align*}
+ \prod_{i=0}^{n-1} 1/(n-i) = 1/n!
+\end{align*}
+
+Since $\mathcal{S}_n$ has size $n!$, we have that $\sigma_n$ is uniform on $\mathcal{S}_n$.
+
+\begin{problem}{II}
+LPW 8.4
+\end{problem}
+
+\begin{enumerate}[label=\alph*)]
+
+\item Let us consider permutations of the blocks $\{1, \ldots, 15\}$. Note that we want to swap $14$ and $15$. Any such permutation will be odd because $\sigma(15) - \sigma(14) = 14 - 15 = -1$. However, for the empty tile to end up back in the bottom right corner, the permutation must be even. Thus, there is no way to swap the tiles $14$ and $15$ while leaving all of the other tiles fixed.
+
+\item
+
+\end{enumerate}
+
+\begin{problem}{III}
+LPW 8.6
+\end{problem}
+
+\end{document}

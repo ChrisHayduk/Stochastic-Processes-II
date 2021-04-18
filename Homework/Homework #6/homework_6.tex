@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 6}
+
+\author{Chris Hayduk}
+\date{April 14, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+LPW 6.8
+\end{problem}
+
+If $A$ is the set of vertices in one of the complete graphs, observe that we have chosen $n$ of the $2n-1$ vertices of the glued graph. Hence $\pi(A) = n/(2n-1) \geq 1/2$.\\
+
+For $x \not\in A$, we have,
+\begin{align*}
+P^t(x, A) &= 1 - \left(1 - \frac{1}{2n}[1 + o(1)]\right)^t
+\end{align*}
+
+We can use this to bound the total variation distance from below as follows,
+\begin{align*}
+||P^t(x, \cdot) - \pi||_{TV} &\geq \pi(A) - P^t(x, A)\\
+&\geq (1 -  \frac{1}{2n}[1 + o(1)])^t - \frac{1}{2}
+\end{align*}
+
+We have that $$\log(1 - \frac{1}{2n}[1 + o(1)])^t - \frac{1}{2} \geq \frac{1}{4}$$ Now if $t < [4\frac{1}{2n}[1 + o(1)](1 - (\frac{1}{2n}[1 + o(1)])/2]^{-1}$, then
+\begin{align*}
+(1 - \frac{1}{2n}[1 + o(1)])^t - 1/2 \geq 1/4
+\end{align*}
+
+which gives us that $t_{mix}(1/4) \geq \frac{n}{2}[1 + o(1)]$
+
+
+\begin{problem}{II}
+LPW 6.9
+\end{problem}
+
+Observe that $\tau_{k+1} = T_{\tau_k} + 1$ and so $\tau_k = T_{\tau_{k-1}} + 1$. Hence,
+\begin{align*}
+m_k &= E(\tau_k)\\
+&= E(T_{\tau_{k-1}} + 1)\\
+&= E(T_{\tau_{k-1}}) + 1\\
+\end{align*}
+
+Similarly,
+\begin{align*}
+m_{k+1} &= E(T_{\tau_k}) + 1\\
+&= E(T_{\tau_{k-1}} + t_k) + 1\\
+&= E(T_{\tau_{k-1}}) + E(t_k) + 1\\
+&= E(T_{\tau_k -1}) + 1 + E(t_k)\\
+&= m_k + E(t_k)
+\end{align*}
+
+\begin{problem}{III}
+LPW 7.2
+\end{problem}
+
+We have that,
+\begin{align*}
+Q(S, S^C) &= \sum_{x \in S, y \in S^C} Q(x,y)\\
+&= \sum_{x \in S, y \in S^C} \pi(x) P(x,y)
+\end{align*}
+
+and,
+\begin{align*}
+Q(S^C, S) &= \sum_{x \in S^C,  y \in S} Q(x, y)\\
+&= \sum_{x \in S, y \in S^C} \pi(x) P(x,y)
+\end{align*}
+
+Observe that, for $Q(S, S^C)$, we can split the summation into two sums which yields,
+\begin{align*}
+Q(S, S^C) &= \sum_{y \in S^C} \sum_{x \in C} \pi(x) P(x,y)
+\end{align*}
+
+Next, note that $\sum_{x \in C} \pi(x) P(x,y) = \sum_{x \in \mathcal{X}} \pi(x) P(x,y) - \sum_{x \in S^C} \pi(x) P(x,y)$. Making this substitution in the above gives us,
+\begin{align*}
+Q(S, S^C) &= \sum_{y \in S^C} [\sum_{x \in \mathcal{X}} \pi(x) P(x,y) - \sum_{x \in S^C} \pi(x) P(x,y)]\\
+&= \sum_{y \in S^C} \sum_{x \in \mathcal{X}} \pi(x) P(x,y) - \sum_{x \in S^C} \pi(x) \sum_{y \in S^C} P(x,y)\\
+&= \sum_{y \in S^C} \pi(y) - \sum_{x \in S^C} \pi(x) \left[ 1 - \sum_{y \in S} P(x, y) \right]\\
+&= \sum_{y \in S^C} \pi(y) - \sum_{x \in S^C} \pi(x) + \sum_{x \in S^C} \sum_{y \in S} P(x, y) \pi(x) P(x, y)\\
+&= \sum_{x \in S^C} \sum_{y \in S} P(x, y) \pi(x) P(x, y)
+\end{align*}
+
+But note that this is exactly the definition we gave for $Q(S^C, S)$. Hence, we must have that $Q(S, S^C) = Q(S^C, S)$.
+
+\newpage
+\begin{problem}{IV}
+LPW 7.4
+\end{problem}
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Note that,
+\begin{align*}
+|\mathcal{X}| = (2^n - 1)(2^n - 2^1) \cdots (2^n - 2^{n-1})
+\end{align*}
+
+Hence, we have,
+\begin{align*}
+\lim_{n \to \infty} \frac{|\mathcal{X}|}{2^{n^2}} &= \lim_{n \to \infty} \frac{(2^n - 1)(2^n - 2^1) \cdots (2^n - 2^{n-1})}{2^{n^2}}\\
+&= \frac{\lim_{n \to \infty} (2^n - 1)(2^n - 2^1) \cdots (2^n - 2^{n-1})}{\lim_{n \to \infty} 2^{n^2}}
+\end{align*}
+
+
+
+\item 
+
+\end{enumerate}
+
+\end{document}

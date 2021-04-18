@@ -69,7 +69,7 @@ Note that $\rho n$ is a constant for any fixed $n$, and that $M_n$ is a finite s
 E|N_n| < \infty
 \end{align*}
 
-for all $n \geq 0$. Moreover, since $H_n$ is predictable, $S_n = X_1 + \cdots X_n$, and $M_n$ is a product of these two, we have that $M_n$ can we determined from the values $X_n, \ldots X_0$ and $M_0$ as required. Lastly, we have,
+for all $n \geq 0$. Moreover, since $H_n$ is predictable, $S_n = X_1 + \cdots X_n$, and $M_n$ is a product of these two, we have that $N_n$ can we determined from the values $X_n, \ldots X_0$ and $M_0$ as required. Lastly, we have,
 \begin{align*}
 M_{n+1} - M_n &= H_{k+1}X_{k+1}
 \end{align*}
@@ -85,8 +85,21 @@ N_{n+1} - N_{n} &= \log(M_{n+1}) - \rho (n+1) - (\log(M_{n}) - \rho n)\\
 \end{align*}
 
 When $X_{k+1} = -1$, we have that $\log(M_n) + \rho > \log(M_{n+1})$ and so we get,
+\begin{align*}
+N_{n+1} - N_n < 0
+\end{align*}
 
+If $X_{k+1} = 1$, note that $\log(M_n) + \rho > \log(M_{n+1})$. Thus again we have,
+\begin{align*}
+N_{n+1} - N_n < 0
+\end{align*}
 
+Hence,
+\begin{align*}
+E[N_{n+1} - N_n | A_v] \leq 0
+\end{align*}
+
+And so $N_n$ is a supermartingale. 
 
 \begin{problem}{II}
 \end{problem}
@@ -134,6 +147,11 @@ is minimal for large $t$.
 \begin{problem}{III}
 \end{problem}
 
+Since every vertex has an edge to every other vertex as well as one self-loop, we have that each vertex has degree $n$. Hence, from any vertex, we have an equal probability of reaching any other vertex. Note that this is exactly the coupon collector problem with $n$ different coupons. Hence, by Proposition 2.3, we have that,
+
+\begin{align*}
+E(\tau) = n \sum_{k=1}^n \frac{1}{k}
+\end{align*}
 \begin{problem}{IV}
 \end{problem}
 
