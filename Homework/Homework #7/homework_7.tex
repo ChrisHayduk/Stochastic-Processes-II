@@ -85,12 +85,16 @@ LPW 8.4
 
 \item Let us consider permutations of the blocks $\{1, \ldots, 15\}$. Note that we want to swap $14$ and $15$. Any such permutation will be odd because $\sigma(15) - \sigma(14) = 14 - 15 = -1$. However, for the empty tile to end up back in the bottom right corner, the permutation must be even. Thus, there is no way to swap the tiles $14$ and $15$ while leaving all of the other tiles fixed.
 
-\item
+\item Any even permutation of the tiles can be achieved through only legal moves.
 
 \end{enumerate}
 
 \begin{problem}{III}
 LPW 8.6
 \end{problem}
+
+When $n = 1$, we choose the only card with probability $1$. Hence it is uniform. When $n = 2$, we have 0.5 chance of choosing either card both when $k = 1$ and $k = 2$, so it is uniform.\\
+
+For $n > 2$, observe that we have $n$ choices for $J^k$ at each step in the algorithm and that there are $n$ steps. Hence, there are $n^n$ possible choices and so, to be uniform, we would need each choice to be some integral multiple of $1/n^n$. However, we know that the uniform distribution on the permutation group of size $n$ is $1/n!$. $1/n^n$ is not an integral multiple of $1/n!$ for any values of $n > 2$, and so this distribution cannot be uniform.
 
 \end{document}

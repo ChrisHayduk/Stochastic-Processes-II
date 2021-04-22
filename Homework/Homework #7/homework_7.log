@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  17 APR 2021 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  20 APR 2021 19:24
 entering extended mode
 **./homework_7.tex
 (homework_7.tex
@@ -398,8 +398,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
 [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
-(homework_7.aux) ) 
+{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[2] (homework_7.aux) ) 
 Here is how much of TeX's memory you used:
  4266 strings out of 479334
  59223 string characters out of 2873605
@@ -408,15 +412,15 @@ Here is how much of TeX's memory you used:
  447782 words of font info for 72 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,8n,74p,806b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fonts/
-enc/dvips/lm/lm-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTeX/f
-onts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/MiK
-TeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmex10.pf
-b><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public/lm/
-lmmi8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/pub
-lic/lm/lmr17.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/typ
-e1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on homework_7.pdf (2 pages, 126686 bytes).
+{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/MiKTeX/fo
+nts/enc/dvips/lm/lm-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKT
+eX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:
+/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmex1
+0.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public
+/lm/lmmi8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1
+/public/lm/lmr17.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fonts
+/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on homework_7.pdf (2 pages, 127834 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
