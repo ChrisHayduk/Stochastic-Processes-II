@@ -85,7 +85,7 @@ LPW 8.4
 
 \item Let us consider permutations of the blocks $\{1, \ldots, 15\}$. Note that we want to swap $14$ and $15$. Any such permutation will be odd because $\sigma(15) - \sigma(14) = 14 - 15 = -1$. However, for the empty tile to end up back in the bottom right corner, the permutation must be even. Thus, there is no way to swap the tiles $14$ and $15$ while leaving all of the other tiles fixed.
 
-\item Any even permutation of the tiles can be achieved through only legal moves.
+\item Any even permutation of the tiles can be achieved through only legal moves. Moving the blank block from $i$ to $j$ in the puzzle permutes all consecutive integers $k$ such that $i \leq k < j$. That is, the permutation induced by the blank block moving from $i$ to $j$ is $(i, i+1, i+2, \ldots, j-2, j-1)$. These permutations generate $A_{15}$, which is the group of all even permutations in $S_{15}$.
 
 \end{enumerate}
 
