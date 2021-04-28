@@ -60,11 +60,13 @@
 LPW 8.9
 \end{problem}
 
+Let us assume we are working with a $3$ card deck. We will consider the distribution when $T = 3$.
+
 \begin{enumerate}[\alph*)]
 
-\item
+\item Since both cards are marked on every transposition and each selection is uniform and independent, we have that each card has a $2/3$ chance of being marked. At $T = 3$, there are $2$ cards already marked and $1$ card that is unmarked.
 
-\item
+\item Since the right-hand card is marked on every transposition and each right-hand card is chosen uniformly, we have that each card has a $1/3$ chance of being marked. At $T = 3$, there are $2$ cards already marked and $1$ card that is unmarked. Hence, we have a $2/3$ chance of marking a marked card again, and a $1/3$ chance of marking the unmarked card.
 
 \end{enumerate}
 
@@ -72,18 +74,52 @@ LPW 8.9
 LPW 12.1
 \end{problem}
 
-\begin{problem}{III}
-LPW 12.2
-\end{problem}
-
 \begin{enumerate}[\alph*)]
 
-\item
+\item By the hint, we will let $||f||_{\infty} = \max_{x \in \mathcal{X}} |f(x)|$. We have that,
+\begin{align*}
+||Pf||_{\infty} &= \max_{x \in \mathcal{X}} |P(x,y) f(y)|
+\end{align*}
 
-\item
+Since $0 \leq P(x,y) \leq 1$ for all $x,y \in \mathcal{X}$, we have that $|P(x,y) f(y)| < |f(y)|$ for all $x,y$. Hence,
+\begin{align*}
+||Pf||_{\infty} &= \max_{x \in \mathcal{X}} |P(x,y) f(y)|\\
+&\leq \max_{x \in \mathcal{X}} |f(x)|\\
+&= ||f||_{\infty}
+\end{align*}
+
+Now suppose $f$ is an eigenfunction with corresponding eigenvalue $\lambda$. The,
+\begin{align*}
+||Pf||_{\infty} &= ||\lambda f||_{\infty}\\
+&= \max_{x \in \mathcal{X}} | \lambda f(x)|\\
+&= |\lambda| \max_{x \in \mathcal{X}}  |f(x)|\\
+&= |\lambda| ||f||_{\infty}
+\end{align*}
+
+From the first part of our proof, we have that,
+\begin{align*}
+||Pf||_{\infty} &= |\lambda| ||f||_{\infty}\\
+&\leq ||f||_{\infty}
+\end{align*}
+
+This final inequality implies that $|\lambda| \leq 1$.
+
+\item Assume that $\mathcal{T}(x) \subset 2 \mathbb{Z}$. Then every time $t$ such that $P^t(x, x) > 0$ is a multiple of $2$.
 
 \item
 
 \end{enumerate}
 
+\begin{problem}{III}
+LPW 12.2
+\end{problem}
+
+Let $P$ be irreducible and let $A$ be a matrix with $0 \leq A(i, j) \leq P(i, j)$ and $A \neq P$. Since $A \neq P$, we must have $A(i, j) < P(i,j)$ for some $i,j$. By 12.1(a), we have that every eigenvalue $\lambda$ of $P$ satisfies $|\lambda| \leq 1$. Now suppose $f$ is an eigenfunction of $A$ with eigenvalue $\lambda_1$ of $A$ and $\lambda_2$ of $P$. We have,
+\begin{align*}
+||Af||_{\infty} &= |\lambda_1| ||f||_{\infty}\\
+&< ||Pf||_{\infty}\\
+&= |\lambda_2| ||f||_{\infty}
+\end{align*}
+
+Dividing through by $||f||_{\infty}$ yields $|\lambda_1| < |\lambda_2| \leq 1$, and so $|\lambda_1| < 1$.
 \end{document}
