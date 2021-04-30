@@ -56,6 +56,8 @@
 
 \maketitle
 
+\textit{Note:} Worked with Raghu and George.
+
 \begin{problem}{I}
 LPW 8.9
 \end{problem}
@@ -64,12 +66,13 @@ Let us assume we are working with a $3$ card deck. We will consider the distribu
 
 \begin{enumerate}[\alph*)]
 
-\item Since both cards are marked on every transposition and each selection is uniform and independent, we have that each card has a $2/3$ chance of being marked. At $T = 3$, there are $2$ cards already marked and $1$ card that is unmarked.
+\item Suppose we have two of the three cards checked. Without loss of generality, assume card $3$ is unchecked in the third position. We only check the third card if it is part of a transposition. Hence, the only possible transpositions we can introduce where we mark the third card is by transposing it with one of the first two cards. That is, if $A_i$ is the i-th position in the deck, we only mark card $3$ if it ends up in $A_1$ or $A_2$ (that is, it is transposed with $1$ or with $2$). Hence, the resulting permutation given that two cards are already checked only has positive probability if $3$ is in one of the first two positions. The other $2$ possible permutations of $3$ cards (where card $3$ is in position $3$) have probability $0$. Hence, this is not uniform.
 
-\item Since the right-hand card is marked on every transposition and each right-hand card is chosen uniformly, we have that each card has a $1/3$ chance of being marked. At $T = 3$, there are $2$ cards already marked and $1$ card that is unmarked. Hence, we have a $2/3$ chance of marking a marked card again, and a $1/3$ chance of marking the unmarked card.
-
+\item Suppose we have two of the three cards checked. Without loss of generality, assume card $3$ is unchecked and in the third position. We only check the third card if it is the right-hand card of a transposition. Hence, in order to get a permutation where $3$ is in the third position, we would need to swap it with card $1$ or card $2$ as the left-hand size of a transposition and then choose $3$ as the right-hand side of a transposition that sends it to $A_3$. Hence, it requires at least $2$ steps from our initial set up for $3$ to be marked in position $A_3$. However, we can get $3$ marked in position $A_1$ or $A_2$ in only $1$ step
+by swapping $3$ as the right-hand side of a transposition with one of the first two cards. Hence, since it requires more steps to get $3$ marked in the final position, the probability of that permutation must be lower than the probability of a permutation where $3$ ends up in $A_1$ or $A_2$. Thus, this is not uniform.
 \end{enumerate}
 
+\newpage
 \begin{problem}{II}
 LPW 12.1
 \end{problem}
@@ -104,9 +107,63 @@ From the first part of our proof, we have that,
 
 This final inequality implies that $|\lambda| \leq 1$.
 
-\item Assume that $\mathcal{T}(x) \subset 2 \mathbb{Z}$. Then every time $t$ such that $P^t(x, x) > 0$ is a multiple of $2$.
+\item Assume that $\mathcal{T}(x) \subset 2 \mathbb{Z}$. $-1$ is a $2$-nd root of unity because $-1^2 = 1$. Let $\mathcal{C}_j = \{x \in \mathcal{X}: P^{2m + j}(x_0, x) > 0 \text{ for some } m\}$ for $j = 0, 1, 2$. We have that there is a unique $j(x) \in \{0, 1\}$ such that $x \in \mathcal{C}_{j(x)}$ and  if $P(x,y) > 0$ then $j(y) = j(x) + 1 \mod 2$.\\
 
-\item
+Let $f: \mathcal{X} \to \mathbb{C}$ be defined by $f(x) = -1^{j(x)}$. We have that, for some $\ell \in \mathbb{Z}$,
+\begin{align*}
+Pf(x) = \sum_{y \in \mathcal{X}} P(x,y) (-1)^{j(y)} &= -1^{j(x) + 1 \mod 2}\\
+&= (-1)^{j(x) + 1 + 2\ell} = -1 (-1)^{j(x)} = -1 f(x) 
+\end{align*}
+
+Thus, $f(x)$ is an eigenfunction of $P$ with eigenvalue $-1$.\\
+
+Now let $-1$ be an eigenvalue of $P$. Choose $x$ such that $|f(x)| = r := \max_{y \in \mathcal{X}} |f(y)|$. Since
+\begin{align*}
+-1f(x) = Pf(x) = \sum_{y \in \mathcal{X}} P(x,y)f(y)
+\end{align*}
+
+taking absolute values shows that 
+\begin{align*}
+r \leq \sum_{y \in X} P(x,y) |f(y)| \leq r
+\end{align*}
+
+We conclude that if $P(x, y) > 0$, then $|f(y)| = r$. By irreducibility, $|f(y)| = r$ for all $y \in \mathcal{X}$.\\
+
+Since the average of complex numbers of norm $r$ has norm $r$ if and only if all the values have the same angle, it follows that $f(y)$ has the same value for all $y$ with $P(x,y) > 0$. Therefore, if $P(x,y) > 0$, then $f(y) = -1f(x)$. Now fix $x_0 \in \mathcal{X}$ and define for $j = 0, 1$,
+\begin{align*}
+\mathcal{C}_j = \{z \in \mathcal{X}: f(z) = -1^j f(x_0)\}
+\end{align*}
+
+It is clear that if $P(x,y)>0$ and $x \in \mathcal{C}_j$, then $x \in \mathcal{C}_{j + 1 \mod 2}$. It is clear that if $t \in \mathcal{T}(x_0)$, then $2$ divides $t$ and hence $\mathcal{T}(x_0) \subset 2\mathbb{Z}$, as required.
+
+\item We now generalize the previous proof. Assume that $a$ divides $\mathcal{T}(x)$. If $b$ is the gcd of $\mathcal{T}(x)$, then $a$ divides $b$. If $\omega$ is an $a$-th root of unity, then $\omega^b = 1$. Let $\mathcal{C}_j = \{x \in \mathcal{X}: P^{mb + j}(x_0, x) > 0 \text{ for some } m\}$ for $j = 0, \ldots, b$. We have that there is a unique $j(x) \in \{0, \ldots, b-1\}$ such that $x \in \mathcal{C}_{j(x)}$ and  if $P(x,y) > 0$ then $j(y) = j(x) + 1 \mod b$.\\
+
+Let $f: \mathcal{X} \to \mathbb{C}$ be defined by $f(x) = \omega^{j(x)}$. We have that, for some $\ell \in \mathbb{Z}$,
+\begin{align*}
+Pf(x) = \sum_{y \in \mathcal{X}} P(x,y) \omega^{j(y)} &= \omega^{j(x) + 1 \mod b}\\
+&= \omega^{j(x) + 1 + b\ell} = \omega \omega^{j(x)} = \omega f(x) 
+\end{align*}
+
+Thus, $f(x)$ is an eigenfunction of $P$ with eigenvalue $\omega$.\\
+
+Now let $\omega$ be an $a$-th root of unity and suppose that $\omega f = Pf$ for some $f$. Choose $x$ such that $|f(x)| = r := \max_{y \in \mathcal{X}} |f(y)|$. Since
+\begin{align*}
+\omega f(x) = Pf(x) = \sum_{y \in \mathcal{X}} P(x,y)f(y)
+\end{align*}
+
+taking absolute values shows that 
+\begin{align*}
+r \leq \sum_{y \in X} P(x,y) |f(y)| \leq r
+\end{align*}
+
+We conclude that if $P(x, y) > 0$, then $|f(y)| = r$. By irreducibility, $|f(y)| = r$ for all $y \in \mathcal{X}$.\\
+
+Since the average of complex numbers of norm $r$ has norm $r$ if and only if all the values have the same angle, it follows that $f(y)$ has the same value for all $y$ with $P(x,y) > 0$. Therefore, if $P(x,y) > 0$, then $f(y) = \omega f(x)$. Now fix $x_0 \in \mathcal{X}$ and define for $j = 0, \ldots, k-1$,
+\begin{align*}
+\mathcal{C}_j = \{z \in \mathcal{X}: f(z) = \omega^j f(x_0)\}
+\end{align*}
+
+It is clear that if $P(x,y)>0$ and $x \in \mathcal{C}_j$, then $x \in \mathcal{C}_{j + 1 \mod k}$. It is clear that if $t \in \mathcal{T}(x_0)$, then $k$ divides $t$ and hence $\mathcal{T}(x_0) \subset k\mathbb{Z}$, as required.
 
 \end{enumerate}
 
@@ -114,12 +171,18 @@ This final inequality implies that $|\lambda| \leq 1$.
 LPW 12.2
 \end{problem}
 
-Let $P$ be irreducible and let $A$ be a matrix with $0 \leq A(i, j) \leq P(i, j)$ and $A \neq P$. Since $A \neq P$, we must have $A(i, j) < P(i,j)$ for some $i,j$. By 12.1(a), we have that every eigenvalue $\lambda$ of $P$ satisfies $|\lambda| \leq 1$. Now suppose $f$ is an eigenfunction of $A$ with eigenvalue $\lambda_1$ of $A$ and $\lambda_2$ of $P$. We have,
+Let $P$ be irreducible and let $A$ be a matrix with $0 \leq A(i, j) \leq P(i, j)$ and $A \neq P$. Since $A \neq P$, we must have $A(i, j) < P(i,j)$ for some $i,j$. By 12.1(a), we have that $||Pf||_{\infty} \leq ||f||_{\infty}$ where $||f||_{\infty} = \max_{x \in \mathcal{X}} |f(x)|$. Let $f'(x_0)$ be the largest eigenfunction of $P$ and let us define $f$ and $\lambda$ to be an eigenfunction and its corresponding eigenvalue of $A$, respectively. Define $||f||_{\infty} = |f(x_1)|$ so that $|f(y)| \leq |f(x_1)|$ for all $y \in \mathcal{X}$. Thus,
 \begin{align*}
-||Af||_{\infty} &= |\lambda_1| ||f||_{\infty}\\
-&< ||Pf||_{\infty}\\
-&= |\lambda_2| ||f||_{\infty}
+||Af||_{\infty} = ||\lambda f||_{\infty} &= \max_{x \in \mathcal{X}} \left | \sum_{y \in \mathcal{X}} A(x,y) f(y) \right |\\
+&\leq \max_{x \in \mathcal{X}} \left| \sum_{y \in \mathcal{X}} A(x, y) f(x_1) \right|\\
+&= |f(x_1)| \max_{x \in \mathcal{X}} \sum_{y \in \mathcal{X}} A(x, y)\\
+&< |f(x_1)| \max_{x \in \mathcal{X}} \sum_{y \in \mathcal{X}} P(x, y)\\
+&= \frac{|f(x_1)|}{|f'(x_0)|} \max_{x \in \mathcal{X}} \sum_{y \in \mathcal{X}} P(x, y) \cdot |f'(x_0)|\\
+&= \frac{|f(x_1)|}{|f'(x_0)|} \max_{x \in \mathcal{X}} \sum_{y \in \mathcal{X}} \left| P(x, y) \cdot f'(x_0) \right|\\
+&= \frac{|f(x_1)|}{|f'(x_0)|} ||f'||_{\infty}\\
+&= \frac{|f(x_1)|}{|f'(x_0)|} |f'(x_0)|
 \end{align*}
 
-Dividing through by $||f||_{\infty}$ yields $|\lambda_1| < |\lambda_2| \leq 1$, and so $|\lambda_1| < 1$.
+Since $||\lambda f||_{\infty} = \lambda |f(x_1)| < \frac{|f(x_1)|}{|f'(x_0)|} |f'(x_0)| = |f(x_1)|$, then $\lambda < 1$ as desired.
+
 \end{document}

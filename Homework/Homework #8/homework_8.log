@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  28 APR 2021 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.4)  29 APR 2021 22:19
 entering extended mode
 **./homework_8.tex
 (homework_8.tex
@@ -381,34 +381,66 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 63.
+(Font)              <12> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 63.
+(Font)              <8> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 63.
+(Font)              <6> on input line 65.
  [1
 
-{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] (homework_8
-.aux) ) 
+{C:/Users/chris/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+[3] [4] (homework_8.aux) ) 
 Here is how much of TeX's memory you used:
- 4262 strings out of 479334
- 59185 string characters out of 2873605
- 361509 words of memory out of 3000000
- 21639 multiletter control sequences out of 15000+200000
- 441802 words of font info for 70 fonts, out of 3000000 for 9000
+ 4268 strings out of 479334
+ 59246 string characters out of 2873605
+ 364509 words of memory out of 3000000
+ 21642 multiletter control sequences out of 15000+200000
+ 452044 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,74p,386b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm
--mathit.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTeX/fonts/enc/dv
-ips/lm/lm-ec.enc}<C:/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/t
-ype1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/MiKTeX
-/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:
-/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy10.
-pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on homework_8.pdf (2 pages, 124566 bytes).
+ 68i,10n,74p,804b,253s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/MiKTe
+X/fonts/enc/dvips/lm/lm-rm.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/
+MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc
+}<C:/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/MiKTeX/fonts/type1/public/lm/l
+mex10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/MiKTeX/fonts/type1/pu
+blic/lm/lmmi8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/MiKTeX/fonts/t
+ype1/public/lm/lmr17.pfb><C:/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/MiKTeX/f
+onts/type1/public/lm/lmr8.pfb><C:/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/M
+iKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/MiKTeX/fonts/type1/public/lm/lmsy6.p
+fb><C:/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/MiKTeX/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb>
+Output written on homework_8.pdf (4 pages, 177845 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
