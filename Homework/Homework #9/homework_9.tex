@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb, mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fixltx2e}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{kbordermatrix}
+
+
+\usepackage{graphicx}
+\usepackage{bbm}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newcommand{\textfrac}[2]{\dfrac{\text{#1}}{\text{#2}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\DeclareMathOperator*{\E}{\mathbb{E}}
+
+
+\begin{document}
+
+\title{Stochastic Processes II: Homework 9}
+
+\author{Chris Hayduk}
+\date{May 14, 2021}
+
+\maketitle
+
+\begin{problem}{I}
+LPW 12.3
+\end{problem}
+
+Let $P_L = (P + I)/2$ be the transition matrix of the lazy version of the chain with transition matrix $P$. Suppose $P_L$ has eigenvalue $\lambda < 0$ with corresponding eigenfunction $f$. Then,
+\begin{align*}
+P_L f &= (P/2 + I/2) f\\
+&= (Pf + f)/2\\
+&= \lambda f
+\end{align*}
+
+From the above equalities, we have,
+\begin{align*}
+&Pf/2 + f/2 = \lambda f\\
+\iff &Pf/2 = \lambda f - f/2\\
+\iff &Pf = 2 \lambda f - f\\
+\iff &Pf = (2\lambda - 1)f
+\end{align*}
+
+Hence, $2\lambda - 1$ is an eigenvalue of $P$ and so, by Lemma 12.1(i), we have that,
+\begin{align*}
+&2 \lambda - 1 \geq -1\\
+\iff &\lambda \geq 0
+\end{align*}
+
+We assumed that $\lambda < 0$, and hence we have a contradiction. Thus, there are no eigenvalues $\lambda$ of $P_L$ such that $\lambda < 0$, as required.
+
+\newpage
+\begin{problem}{II}
+LPW 12.4
+\end{problem}
+
+We have that,
+\begin{align*}
+E_{\pi}(P^tf) &= \pi P^t f\\
+&= \pi f\\
+&= E_{\pi}(f)
+\end{align*}
+
+We have that the first eigenfunction $f_1 \equiv 1$, and so we have,
+\begin{align*}
+P^t f - E_{\pi}(P^t f) &= \sum_{j=1}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi} f_j \lambda_j^t\\
+&= \sum_{j=2}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi} f_j \lambda_j^t
+\end{align*}
+
+Because the $f_j$'s are an orthonormal basis, this gives us,
+\begin{align*}
+\text{Var}_{\pi}(f) &= ||P^t f - E_{\pi}(P^tf)||^2_{\ell^2(\pi)}\\
+&= \sum_{j=2}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi}^2 f_j \lambda_j^{2t}
+\end{align*}
+
+Now note that for all $\lambda_j$, we have that $1 - \gamma_* \geq \lambda_j$. Thus, we have,
+\begin{align*}
+\text{Var}_{\pi}(f) &= \sum_{j=2}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi}^2 f_j \lambda_j^{2t}\\
+&\leq \sum_{j=2}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi}^2 f_j (1 - \gamma_*)^{2t}\\
+&= (1 - \gamma_*)^{2t} \sum_{j=2}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi}^2 f_j
+\end{align*} 
+
+Moreover, we have that,
+\begin{align*}
+\sum_{j=2}^{| \mathcal{X} |} \langle f, f_j \rangle_{\pi}^2 &= E_{\pi}(f^2) - E^2_{\pi}(f)\\
+&= \text{Var}_{\pi}(f)
+\end{align*}
+
+And so,
+\begin{align*}
+\text{Var}_{\pi}(f) &\leq (1 - \gamma_*)^{2t} \text{Var}_{\pi}(f)
+\end{align*}
+
+as required.
+
+\newpage
+\begin{problem}{III}
+LPW 18.1
+\end{problem}
+
+Suppose that the $n$-th chain in a sequence of Markov chains satisfies,
+\begin{align*}
+\lim_{n \to \infty} d_n (c t^n_{\text{mix}}) - \begin{cases}
+1 & \text{if } c < 1,\\
+0 & \text{if } c > 1
+\end{cases}
+\end{align*}
+
+Then for any $\gamma > 0$ and for $n$ large enough, we have,
+\begin{align*}
+t_{\text{mix}}(\epsilon) &\leq (1 + \gamma) t^n_{\text{mix}}\\
+t_{\text{mix}}(1 - \epsilon) &\geq (1 - \gamma)t^n_{\text{mix}}
+\end{align*}
+
+These equations together yield,
+\begin{align*}
+\frac{t_{\text{mix}}(\epsilon)}{t_{\text{mix}}(1 - \epsilon)} \leq \frac{1 + \gamma}{1 - \gamma}
+\end{align*}
+
+If we let $\gamma$ approach $0$, then $n$ must approach $\infty$ and we get,
+\begin{align*}
+\lim_{n \to \infty} \frac{t_{\text{mix}}(\epsilon)}{t_{\text{mix}}(1 - \epsilon)} = 1
+\end{align*}
+
+as required.\\
+
+Now suppose that we have,
+
+\begin{align*}
+\lim_{n \to \infty} \frac{t_{\text{mix}}(\epsilon)}{t_{\text{mix}}(1 - \epsilon)} = 1
+\end{align*}
+
+Fix $\gamma > 0$. Then for any $\epsilon > 0$ and for $n$ large enough, we have $t_{\text{mix}}(\epsilon) \leq (1 + \gamma)t^n_{\text{mix}}$. That is, $\lim_{n \to \infty} d_n((1 + \gamma)t^n_{\text{mix}}) \leq \epsilon$. Since this holds for all $\epsilon$,
+\begin{align*}
+\lim_{n \to \infty} d_n ((1 + \gamma)t^n_{\text{mix}}) = 0
+\end{align*}
+
+Moreover, $\lim_{n \to \infty} d_n ((1 - \gamma) t^n_{\text{mix}}) \geq 1 - \epsilon$ since $t_{\text{mix}}(1-\epsilon) \geq (1 - \gamma)t^n_{\text{mix}}$ for $n$ sufficiently large. Thus, we have that,
+\begin{align*}
+\lim_{n \to \infty} d_n ((1 - \gamma) t^n_{\text{mix}}) = 1
+\end{align*}
+
+\end{document}
